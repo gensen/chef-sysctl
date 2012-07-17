@@ -9,7 +9,7 @@ def compile_attr(prefix, v)
   case v
   when Array
     return "#{prefix}=#{v.join(" ")}"
-  when String, Fixnum, Float, Symbol
+  when String, Fixnum, Float, Symbol, Bignum
     "#{prefix}=#{v}"
   when Hash, Chef::Node::Attribute
     prefix += "." unless prefix.empty?
